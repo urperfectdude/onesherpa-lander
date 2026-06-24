@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+/*
+  OneSherpa: light-first, blue-accent palette.
+  Clean white surfaces, soft blue-tinted neutrals, generous whitespace.
+  Inspired by the restraint of gojiberry.ai (not a clone).
+*/
+
+:root {
+  /* base surfaces */
+  --background: #ffffff;
+  --background-subtle: #f6f8fc; /* alternating section wash */
+  --foreground: #0b1220;
+  --card: #ffffff;
+  --card-foreground: #0b1220;
+
+  /* neutrals with a faint blue undertone */
+  --muted: #eef2f9;
+  --muted-foreground: #5a647a;
+  --border: #e5eaf2;
+
+  /* blue accent */
+  --accent: #2f6bff;
+  --accent-hover: #1f57e6;
+  --accent-foreground: #ffffff;
+  --accent-soft: #eaf1ff; /* tinted chip / icon backdrop */
+  --ring: #2f6bff;
+
+  --radius: 0.875rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-subtle: var(--background-subtle);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-soft: var(--accent-soft);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --radius-card: var(--radius);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--accent) 22%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* dotted grid backdrop for the hero */
+.bg-grid {
+  background-image: radial-gradient(
+    color-mix(in oklab, var(--accent) 18%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+}
+
+/* soft conic/radial brand glow */
+.bg-glow {
+  background: radial-gradient(
+    closest-side,
+    color-mix(in oklab, var(--accent) 100%, transparent),
+    transparent
+  );
+}
+
+/* slow float for accent decorations */
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.animate-float {
+  animation: float-y 6s ease-in-out infinite;
+}
