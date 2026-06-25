@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { asset } from "@/lib/base-path";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -39,6 +40,9 @@ export const metadata: Metadata = {
   creator: "onesherpa",
   alternates: {
     canonical: "/",
+  },
+  icons: {
+    icon: [{ url: asset("/favicon_onesherpa.svg"), type: "image/svg+xml" }],
   },
   openGraph: {
     type: "website",

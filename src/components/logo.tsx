@@ -16,7 +16,7 @@ export function Logo({
       aria-hidden={decorative || undefined}
       width={230}
       height={67}
-      className={cn("h-7 w-auto", className)}
+      className={cn("h-[2.625rem] w-auto", className)}
     />
   );
 }
