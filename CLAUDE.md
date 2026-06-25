@@ -63,6 +63,8 @@ When the repo is scaffolded, keep this section in sync with reality.
 - Components are small, composable, server-first; add `"use client"` only where interaction needs it.
 - Copy is owned by the copywriter agent — don't invent product claims; keep to the positioning above.
 - Accessibility and responsive behavior are not optional; check both before calling a section done.
+- Brand name always renders lowercase — `onesherpa`, never `OneSherpa` — in UI copy, metadata, and
+  structured data. (Internal code comments may still use the proper-noun form.)
 
 ## Subagents (in `.claude/agents/`)
 

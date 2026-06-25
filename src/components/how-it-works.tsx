@@ -4,7 +4,7 @@ const STEPS = [
   {
     n: "01",
     title: "Implement",
-    body: "Describe your business in plain language. OneSherpa scopes the projects, DocTypes, and data model and stands up a working ERPNext setup.",
+    body: "Describe your business in plain language. onesherpa scopes the projects, DocTypes, and data model and stands up a working ERPNext setup.",
   },
   {
     n: "02",

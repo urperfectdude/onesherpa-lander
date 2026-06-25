@@ -15,7 +15,7 @@ export function CTA() {
               Build your ERP by describing it.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-pretty text-background/70">
-              Start with your company website. OneSherpa scopes a starter ERPNext setup
+              Start with your company website. onesherpa scopes a starter ERPNext setup
               you can shape from there.
             </p>
 

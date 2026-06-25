@@ -48,7 +48,7 @@ export function Comparison() {
 
           <Reveal delay={0.08} className="rounded-2xl border border-accent/30 bg-card p-7 shadow-sm ring-1 ring-accent/10">
             <h3 className="text-sm font-semibold uppercase tracking-wide text-accent">
-              With OneSherpa
+              With onesherpa
             </h3>
             <ul className="mt-5 space-y-3">
               {ONESHERPA.map((item) => (

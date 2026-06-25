@@ -51,7 +51,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-border pt-6 text-sm text-muted-foreground sm:flex-row">
-          <p>© 2026 OneSherpa. All rights reserved.</p>
+          <p>© 2026 onesherpa. All rights reserved.</p>
           <p>Built for ERPNext and Frappe Partners.</p>
         </div>
       </div>

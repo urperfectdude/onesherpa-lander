@@ -16,7 +16,7 @@ export function Logo({ className }: { className?: string }) {
           <path d="M12 9 8.5 16h7L12 9Z" fill="var(--accent)" />
         </svg>
       </span>
-      <span className="text-[1.05rem] text-foreground">OneSherpa</span>
+      <span className="text-[1.05rem] text-foreground">onesherpa</span>
     </span>
   );
 }

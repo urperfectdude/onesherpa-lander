@@ -59,7 +59,7 @@ export function Capabilities() {
       <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            If you can describe it, OneSherpa can build it.
+            If you can describe it, onesherpa can build it.
           </h2>
           <p className="mt-4 text-pretty text-muted-foreground">
             One console for the whole job, from first setup to day-to-day operation.

@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# saved-site design references (local inspiration only, not project assets)
+/ramain.ai-*/
+/gojiberry.ai-*/

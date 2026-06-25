@@ -6,15 +6,15 @@ import { Reveal } from "@/components/reveal";
 
 const FAQS = [
   {
-    q: "Do I need to know ERPNext to use OneSherpa?",
-    a: "No. You describe what your business needs in plain language and OneSherpa configures ERPNext for you. You stay focused on outcomes, not ERP internals.",
+    q: "Do I need to know ERPNext to use onesherpa?",
+    a: "No. You describe what your business needs in plain language and onesherpa configures ERPNext for you. You stay focused on outcomes, not ERP internals.",
   },
   {
     q: "Does it work with my existing ERPNext setup?",
-    a: "Yes. OneSherpa works on top of ERPNext. You can import existing data and configure new projects, DocTypes, and views alongside what you already run.",
+    a: "Yes. onesherpa works on top of ERPNext. You can import existing data and configure new projects, DocTypes, and views alongside what you already run.",
   },
   {
-    q: "Who is OneSherpa built for?",
+    q: "Who is onesherpa built for?",
     a: "Business owners standing up ERPNext, consultants configuring client systems, and ERP implementation companies, including Frappe Partners, doing this at scale.",
   },
   {
@@ -23,7 +23,7 @@ const FAQS = [
   },
   {
     q: "How fast can I get started?",
-    a: "Drop in your company website and describe what you want to make. OneSherpa scopes a starter ERPNext setup you can refine from there.",
+    a: "Drop in your company website and describe what you want to make. onesherpa scopes a starter ERPNext setup you can refine from there.",
   },
 ];
 
@@ -35,7 +35,7 @@ export function FAQ() {
       <div className="mx-auto max-w-3xl px-6 py-20 sm:py-28">
         <Reveal className="text-center">
           <h2 className="text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            What teams ask before switching to OneSherpa.
+            What teams ask before switching to onesherpa.
           </h2>
         </Reveal>
 

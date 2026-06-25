@@ -5,7 +5,7 @@ const FEATURES = [
   {
     img: "/illustrations/robotic-process-automation.svg",
     tag: "AI-native configuration",
-    title: "Describe it, OneSherpa builds it.",
+    title: "Describe it, onesherpa builds it.",
     body: "Spin up projects, DocTypes, and workflows from plain language instead of digging through dense, developer-heavy ERP menus.",
   },
   {
