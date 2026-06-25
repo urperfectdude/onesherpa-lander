@@ -65,8 +65,17 @@ export function Features() {
         <div className="mx-auto mt-14 flex max-w-[960px] flex-col gap-8 md:gap-10">
           {FEATURES.map((f, i) => {
             const reversed = i % 2 === 1;
+            // Stacked on mobile (top/bottom), side-by-side from md: up (left/right).
+            // Each half only rounds the corners it owns on the outer edge of the card.
+            const firstCorners = "rounded-tl-card rounded-tr-card md:rounded-tr-none md:rounded-bl-card";
+            const secondCorners = "rounded-bl-card rounded-br-card md:rounded-bl-none md:rounded-tr-card";
             const illustration = (
-              <div className="relative flex h-[168px] items-center justify-center overflow-hidden border-[0.5px] border-foreground bg-accent-soft md:h-[218px]">
+              <div
+                className={cn(
+                  "relative flex h-[168px] items-center justify-center overflow-hidden border-[0.5px] border-foreground bg-accent-soft md:h-[218px]",
+                  reversed ? secondCorners : firstCorners,
+                )}
+              >
                 <div aria-hidden className="absolute inset-0 bg-grid-tile opacity-30" />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -78,7 +87,12 @@ export function Features() {
               </div>
             );
             const content = (
-              <div className="flex h-[168px] items-center border-[0.5px] border-foreground bg-card px-6 py-6 md:h-[218px] md:px-7">
+              <div
+                className={cn(
+                  "flex h-[168px] items-center border-[0.5px] border-foreground bg-card px-6 py-6 md:h-[218px] md:px-7",
+                  reversed ? firstCorners : secondCorners,
+                )}
+              >
                 <div className="max-w-[230px]">
                   <h3 className="text-[20px] font-semibold leading-[1.06] tracking-tight text-foreground md:text-[22px]">
                     <span className="text-accent">/</span> {f.tag}
