@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [main, dev]
   workflow_dispatch:
 
 # Allow the workflow to publish to Pages.
@@ -20,23 +20,55 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      # main is the production build, served at the site root. dev is a
+      # preview build, served at /dev/. Both are checked out and built
+      # every run (regardless of which branch triggered it) and combined
+      # into one artifact, so neither deploy ever clobbers the other.
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main
+
+      - name: Checkout dev
+        uses: actions/checkout@v4
+        with:
+          ref: dev
+          path: dev
 
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
+          cache-dependency-path: |
+            main/package-lock.json
+            dev/package-lock.json
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Build main (production, served at /)
+        working-directory: main
+        run: |
+          npm ci
+          npm run build
 
-      - name: Build static export
-        run: npm run build
+      - name: Build dev (preview, served at /dev/)
+        working-directory: dev
+        env:
+          NEXT_PUBLIC_BASE_PATH: /onesherpa-lander/dev
+        run: |
+          npm ci
+          npm run build
+
+      - name: Assemble combined site
+        run: |
+          mkdir -p site
+          cp -r main/out/. site/
+          mkdir -p site/dev
+          cp -r dev/out/. site/dev/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./site
 
   deploy:
     needs: build

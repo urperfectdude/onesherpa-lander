@@ -48,8 +48,10 @@
   --radius-card: var(--radius);
 }
 
-* {
-  border-color: var(--border);
+@layer base {
+  * {
+    border-color: var(--border);
+  }
 }
 
 html {
@@ -116,18 +118,26 @@ body {
   background-size: 84px 84px;
 }
 
+/* small graph-paper texture for accent-tinted illustration tiles */
+.bg-grid-tile {
+  background-image: linear-gradient(
+      to right,
+      color-mix(in oklab, var(--foreground) 16%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--foreground) 16%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 28px 28px;
+}
+
 /* thin vertical "margin rule" framing the page edges, drafting-table style */
 .margin-rule {
   width: 0.75rem;
   border-left: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
   border-right: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
-}
-
-/* tiny solid square marker for sparse "corner dot" scatter accents */
-.corner-dot {
-  width: 3px;
-  height: 3px;
-  background: color-mix(in oklab, var(--accent) 55%, transparent);
 }
 
 /* small bordered circle shell for a "corner orb" accent on card edges */
