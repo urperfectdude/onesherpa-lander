@@ -16,9 +16,12 @@ export function Nav() {
         aria-label="Primary"
         className="mx-auto flex h-14 max-w-6xl items-center justify-between rounded-2xl border border-border bg-card/90 px-4 shadow-[0_12px_40px_-32px_rgba(11,18,32,0.35)] backdrop-blur-md sm:px-5"
       >
-        <Link href="/" className="flex items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-          <Logo />
-          <span className="sr-only">onesherpa home</span>
+        <Link
+          href="/"
+          aria-label="onesherpa home"
+          className="flex items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          <Logo decorative />
         </Link>
 
         <div className="hidden items-center gap-1 lg:flex">
